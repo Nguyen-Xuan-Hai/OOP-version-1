@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (c) {
+        this.C = c;
+        this.getC = function () {
+            return this.c;
+        }
+        this.getConvert = function () {
+            return (9/5 * this.C) +32;
+        }
+        this.getCon = function () {
+            return 273 - this.C;
+        }
+    }
+    let tem = new  Temperature(25);
+    let Co = tem.getConvert();
+    let Ko = tem.getCon();
+    document.write('F: ' + Co + '<br>' + 'K :' + Ko);
+</script>
+</body>
+</html>

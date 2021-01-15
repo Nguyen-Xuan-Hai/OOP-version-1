@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="rec" height="400px" width="400px" style="border: solid black"></canvas>
+<script>
+    function Rectangle(height,width) {
+        this.height = height;
+        this.width = width;
+        this.getArea = function (){
+            return  height * width;
+        }
+        this.getPerimeter = function () {
+            return 2 * (height + width);
+        }
+    }
+    function createRect() {
+        let ctx = document.getElementById('rec').getContext('2d');
+        let rect = new Rectangle(100,80);
+        ctx.beginPath();
+        ctx.rect(50,50,rect.width,rect.height);
+        ctx.fillStyle = 'rgb(255,0,255)';
+        ctx.fill();
+        let p = rect.getPerimeter();
+        let s = rect.getArea();
+        document.write(p + '<br>' +s);
+    }
+    createRect();
+</script>
+</body>
+</html>
